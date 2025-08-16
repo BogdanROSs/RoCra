@@ -1,0 +1,694 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monda:wght@400..700&family=Space+Grotesk:wght@300..700&display=swap');
+@font-face {
+    font-family: 'Maddison Signature DEMO';
+    src: url(MaddisonSignatureDEMO.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #0a0a0a; 
+    color: #fff;
+    line-height: 1.6;
+    overflow: hidden;
+}
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    background: #00b2ff; 
+    border-radius: 50%;
+    animation: twinkle 2s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+.star-rain {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.star-rain .star {
+    background: #00b2ff; 
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10px); }
+    100% { transform: translateY(100vh); }
+}
+
+header {
+    color: #fff;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    margin-top: 20px;
+    width: 50px;
+    height: 45px;
+    pointer-events: none; 
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+header nav ul {
+    list-style: none;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+header nav ul li {
+    display: inline;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    color: #00b2ff;
+}
+
+.discord-button {
+    background: #7289DA;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.discord-button:hover {
+    background: #677bc4;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(114, 137, 218, 0.8);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h2 {
+    font-size: 3.5rem; 
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #ffffff; 
+}
+
+.hero text {
+    font-size: 3rem;
+    font-family: 'Maddison Signature DEMO';
+    font-weight: 400;
+    margin-top: -20px; 
+    margin-bottom: 100px;
+    animation: fadeInDown 1.5s ease-in-out;
+    color: #00a2ff;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    margin-bottom: 40px;
+    animation: fadeInUp 1.5s ease-in-out;
+    color: #ccc;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero-button {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: #000000;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.section-container {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 178, 255, 0.1);
+}
+
+.section-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: conic-gradient(from 0deg, transparent, #00b2ff, transparent);
+    animation: rotate-border 4s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotate-border {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.categories {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.categories h2 {
+    font-size: 2.5rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+.category-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px; 
+    padding: 40px;
+    height: auto;
+    width: 25%;
+    margin: 10px;
+    animation: fadeInDown 1.5s ease-in-out; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+}
+
+.category-card h3 {
+    font-size: 1.5rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.category-card p {
+    font-size: 1rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 350;
+    font-style: normal;
+    color: #ffffff;
+}
+
+.category-container {
+    position: relative; 
+}
+
+.category-overlay-text {
+    position: absolute;
+    top: 39px; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #00aeff; 
+    font-family: 'Maddison Signature DEMO';
+    font-size: 2rem; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); 
+}
+
+.pricing {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.pricing h2 {
+    font-size: 2.5rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.overlay-text-fivem-princing {
+    position: absolute;
+    top: 85px; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: #00aeff; 
+    font-family: 'Maddison Signature DEMO';
+    font-size: 2rem; 
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    padding: 30px;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.5);
+}
+
+.pricing-card h3 {
+    font-size: 2rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.pricing-card p {
+    font-size: 1.5rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    margin-bottom: 20px;
+    color: #ccc;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.pricing-card ul li {
+    font-size: 1rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 250;
+    font-style: normal;
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.pricing-card button {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card button:hover {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+.back-button {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #000000;
+    padding: 10px 20px;
+    margin-top: 17px;
+    font-size: 1rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.back-button:hover {
+    background: linear-gradient(135deg, #ffffff, #ffffff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.auth-section {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.auth-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    animation: fadeInDown 1.5s ease-in-out;
+    color: #00b2ff;
+}
+
+.auth-form {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 178, 255, 0.2);
+}
+
+.auth-form:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 178, 255, 0.5);
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.auth-form button {
+    background: linear-gradient(135deg, #00b2ff, #0077ff);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-form button:hover {
+    background: linear-gradient(135deg, #0077ff, #00b2ff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 178, 255, 0.8);
+}
+
+.admin-panel {
+    padding: 50px 20px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+.admin-panel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    animation: fadeInDown 1.5s ease-in-out;
+    color: #00b2ff;
+}
+
+.admin-section {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 7px;
+    padding: 30px;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 178, 255, 0.2);
+}
+
+.admin-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 178, 255, 0.5);
+}
+
+.admin-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #00b2ff;
+}
+
+.admin-section input, .admin-section select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 7px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.admin-section button {
+    background: linear-gradient(135deg, #00b2ff, #0077ff);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 7px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-section button:hover {
+    background: linear-gradient(135deg, #0077ff, #00b2ff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 178, 255, 0.8);
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.title {
+    font-size: var(--fs);
+    font-weight: 800;
+    letter-spacing: var(--ls);
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    margin: 0;
+    color: #00b2ff; 
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8), 
+                 0px 0px 20px rgba(255, 255, 255, 0.6), 
+                 0px 0px 30px rgba(255, 255, 255, 0.4);
+}
+
+.title::before,
+.title::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+}
+
+.title::before {
+    background: linear-gradient(90deg, #00b2ff, transparent);
+    animation: aurora-text 8s linear infinite;
+}
+
+.title::after {
+    background: linear-gradient(90deg, transparent, #ffffff);
+    animation: aurora-text 12s linear infinite;
+}
+
+
+
+.overlay-text {
+    position: absolute;
+    top: 340px; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem; 
+    font-family: 'Maddison Signature DEMO';
+    color: #00a2ff;
+}
+
+.devsync,
+.team {
+    display: inline; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.team {
+    font-size: 1.7rem; 
+    margin-left: -10px; 
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    display: inline;
+    color: #00a2ff; 
+}
+
+.devsync {
+    font-size: 1.7rem;
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 450;
+    font-style: normal;
+    color: #ffffff; 
+}
+
+.subtitle {
+    font-size: 1rem; 
+    color: #a0a0a0; 
+    text-align: center; 
+    margin-top: 50px;
+    margin-left: -202px;
+}   
